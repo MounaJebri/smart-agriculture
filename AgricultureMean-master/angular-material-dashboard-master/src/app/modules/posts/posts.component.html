@@ -1,0 +1,35 @@
+
+  
+  <div>
+   <h1 class="label info">
+      List of Nodes
+    </h1>
+    <table class="table" table is-striped>
+       <thead>
+          <tr>
+             <th > Adress </th>
+             <th >Type</th>
+             <th >Active/Not active</th>
+             <th >Battery Level % </th>
+             <th >Electrovan</th>
+             <th >Mode</th>
+          </tr>
+       </thead>
+       <tbody>
+         
+          <tr *ngFor="let item of postService.nodes">
+             <td ><a [routerLink]="['/nodedata/', item.address , item.type ]">{{ item.address }}  </a> </td>
+             <td> {{ item.type }} </td>
+             <td>{{ item.activeornot }}</td>
+             <td>{{ item.batterylevel}} %</td>
+             <td>{{ item.electrovan }}</td>
+             <td>{{ item.mode }}</td>
+             
+             <a (click)="onDeleteNodeClick(item._id)" class="dropdown-item has-text-danger">
+                  Delete
+                </a>
+             </tr>
+       </tbody>
+    </table>
+  </div>
+  

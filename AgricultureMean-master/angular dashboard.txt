@@ -1,0 +1,6 @@
+telecharger dashboard
+cd
+npm install
+npm update
+npm i @angular-devkit/build-angular@0.803.24
+ng serve --open

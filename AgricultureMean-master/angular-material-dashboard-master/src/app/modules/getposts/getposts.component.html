@@ -1,0 +1,99 @@
+
+<div>
+  
+
+      <div>
+        <h1>Sesnsor Nodes</h1>
+          <table class="table" table is-striped>
+             <thead>
+                <tr>
+                   <th > Ram </th>
+                   <th > Smoke</th>
+                   <th > Temperature</th>
+                   <th > Humidity</th>
+                   <th >Moisture</th>
+                   <th > Time</th>
+                   <th >Electrovan</th>
+                </tr>
+             </thead>
+             <tbody>
+               
+                <tr *ngFor="let item of sensornode ">
+                   <td > {{ item.Ram }}  </td>
+                   <td > {{ item.smoke }}  </td>
+                   <td > {{ item.temperature }}  </td>
+                   <td > {{ item.Humidity }}  </td>
+                   <td > {{ item.moisture }}  </td>
+                   <td > {{ item.time }}  </td>
+                   <td > {{ item.electrovan }}  </td>
+                   
+                   </tr>
+             </tbody>
+          </table>
+        </div>
+      
+    
+    
+      <!--
+       <div>
+        <h1> gateway Nodes</h1>
+           <table class="table" table is-striped>
+              <thead>
+                 <tr>
+                    <th > Orders </th>
+                    <th >Address</th>
+                    <th >Time</th>
+                    
+                 </tr>
+              </thead>
+              <tbody>
+                
+                 <tr *ngFor="let item of postService.gatewaynode">
+                    <td > {{ item.orders }}  </td>
+                    <td > {{ item.address }}  </td>
+                    <td > {{ item.time }}  </td>
+                    
+                    </tr>
+              </tbody>
+           </table>
+         </div>
+         
+    
+         
+      
+        <div>
+          <h1>Tank nodes</h1>
+          <table class="table" table >
+             <thead>
+                <tr>
+                   <th > Electrovan </th>
+                   <th > Water Level</th>
+                   <th >Time</th>
+                   
+                </tr>
+             </thead>
+             <tbody>
+               
+                <tr *ngFor="let item of postService.tanknode">
+                   <td > {{ item.electrovan }}  </td>
+                   <td > {{ item.address }}  </td>
+                   <td > {{ item.time }}  </td>
+                   
+                   </tr>
+             </tbody>
+          </table>
+        </div> -->
+<div></div>
+      <div>
+        <div>
+          <button (click)="onDeleteNodeClick(item._id)" class=" has-text-danger">
+           Enable   _Electrovan
+          </button>
+        </div>
+        <div>
+          <button (click)="onDeleteNodeClick(item._id)" class=" has-text-danger">
+           Desable Electrovan
+          </button>
+        </div>
+      </div>
+</div>

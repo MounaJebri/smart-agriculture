@@ -1,0 +1,3 @@
+Smart-agriculture : is the embedded code part
+
+AgricultureMean-Master : is the Mean stack code part

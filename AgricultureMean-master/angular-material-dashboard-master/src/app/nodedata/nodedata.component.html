@@ -1,0 +1,105 @@
+
+<div>
+  
+
+    <div *ngIf="flag === 1" >
+      <h1>Sesnsor Nodes</h1>
+        <table class="table" table is-striped>
+           <thead>
+              <tr>
+                 <th > Rain </th>
+                 <th > Smoke level </th>
+                 <th > Temperature</th>
+                 <th > Humidity</th>
+                 <th >Moisture</th>
+                 <th > Time</th>
+                 <th >Electrovan</th>
+              </tr>
+           </thead>
+           <tbody>
+             
+              <tr *ngFor="let item of sensornodes">
+                 <td > <!--{{ item.Ram }}--> 
+                  <label [hidden]=" item.Ram < 500" class="col-xs-6 col-form-label" >  not rainning </label>
+                  <label [hidden]=" item.Ram > 500" class="col-xs-6 col-form-label" >   rainning </label>     
+                 </td>
+                 <td > {{ item.smoke }}  </td>
+                 <td > {{ item.temperature }}°C  </td>
+                 <td > {{ item.humidity }}%  </td>
+                 <td > {{ item.moisture }}  </td>
+                 <td > {{ item.time | date :'dd/MM/yyyy h:mm:ss a'}}  </td>
+                 <td > <!--{{ item.electrovan }}-->
+                  <label [hidden]=" item.electrovan  ==5" class="col-xs-6 col-form-label" >  ON </label>
+                  <label [hidden]=" item.electrovan  == 4" class="col-xs-6 col-form-label" >  OFF </label>  </td>
+                 </tr>
+           </tbody>
+        </table>
+      </div>
+    
+  
+  
+    
+     <div  >
+      <h1> gateway Nodes</h1>
+         <table class="table" table is-striped>
+            <thead>
+               <tr>
+                  <th > Source </th>
+                  <th > Orders </th>
+                  <th >destination</th>
+                  <th >Time</th>
+                  
+               </tr>
+            </thead>
+            <tbody>
+              
+               <tr *ngFor="let item of gatewaynode">
+                  <td > {{ item._nodeId }}  </td>
+                  <td > {{ item.ordders }}  </td>
+                  <td > {{ item.address }}  </td>
+                  <td > {{ item.time  | date :'dd/MM/yyyy h:mm:ss a' }}  </td>
+                  
+                  </tr>
+            </tbody>
+         </table>
+       </div>
+       
+  
+       
+    
+      <div  *ngIf="flag ===2 ">
+        <h1>Tank nodes</h1>
+        <table class="table" table >
+           <thead>
+              <tr>
+                 <th > Electrovan </th>
+                 <th > Water Level</th>
+                 <th >Time</th>
+                 
+              </tr>
+           </thead>
+           <tbody>
+             
+              <tr *ngFor="let item of tanknode">
+                 <td > {{ item.electrovan }}  </td>
+                 <td > {{ item.waterlevel }}  </td>
+                 <td > {{ item.time  | date :'dd/MM/yyyy h:mm:ss a' }}  </td>
+                 
+                 </tr>
+           </tbody>
+        </table>
+      </div> 
+<div></div>
+    <div>
+      <div>
+        <button (click)="onDeleteNodeClick(item._id)" class=" has-text-danger">
+         Enable   _Electrovan
+        </button>
+      </div>
+      <div>
+        <button (click)="onDeleteNodeClick(item._id)" class=" has-text-danger">
+         Desable Electrovan
+        </button>
+      </div>
+    </div>
+</div>
